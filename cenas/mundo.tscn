@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/mundo.gd" id="1_scr"]
+[ext_resource type="PackedScene" path="res://cenas/jogador.tscn" id="2_jogador"]
+[ext_resource type="PackedScene" path="res://cenas/ui/hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://cenas/ui/pause.tscn" id="4_pause"]
+[ext_resource type="PackedScene" path="res://cenas/ui/tela_fim.tscn" id="5_fim"]
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource("1_scr")
+
+[node name="Fundo" type="ParallaxBackground" parent="."]
+
+[node name="Cenario" type="Node2D" parent="."]
+
+[node name="Chao" type="TileMapLayer" parent="Cenario"]
+
+[node name="Decoracao" type="TileMapLayer" parent="Cenario"]
+
+[node name="Entidades" type="Node2D" parent="."]
+
+[node name="Jogador" parent="." instance=ExtResource("2_jogador")]
+
+[node name="Hud" parent="." instance=ExtResource("3_hud")]
+
+[node name="Pause" parent="." instance=ExtResource("4_pause")]
+
+[node name="TelaFim" parent="." instance=ExtResource("5_fim")]

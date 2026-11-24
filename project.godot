@@ -1,0 +1,36 @@
+; Arquivo gerado para a Godot 4.3+
+config_version=5
+
+[application]
+
+config/name="The Last Guardian Crown"
+run/main_scene="res://cenas/menu.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[autoload]
+
+Jogo="*res://scripts/autoload/jogo.gd"
+Sons="*res://scripts/autoload/sons.gd"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1440
+window/size/window_height_override=810
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_physics/layer_1="mundo"
+2d_physics/layer_2="jogador"
+2d_physics/layer_3="inimigos"
+2d_physics/layer_4="ataques_jogador"
+2d_physics/layer_5="ataques_inimigos"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

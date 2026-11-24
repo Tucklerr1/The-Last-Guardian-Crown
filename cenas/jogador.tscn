@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/jogador.gd" id="1_scr"]
+[ext_resource type="SpriteFrames" path="res://arte/frames/jogador.tres" id="2_fr"]
+[ext_resource type="Texture2D" path="res://arte/efeitos/golpe.png" id="3_golpe"]
+
+[sub_resource type="RectangleShape2D" id="forma_corpo"]
+size = Vector2(10, 18)
+
+[sub_resource type="RectangleShape2D" id="forma_hurt"]
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="forma_ataque"]
+size = Vector2(28, 22)
+
+[node name="Jogador" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_scr")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("2_fr")
+animation = &"parado"
+
+[node name="Corpo" type="CollisionShape2D" parent="."]
+shape = SubResource("forma_corpo")
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CorpoHurt" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 1)
+shape = SubResource("forma_hurt")
+
+[node name="Ataque" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+
+[node name="CorpoAtaque" type="CollisionShape2D" parent="Ataque"]
+shape = SubResource("forma_ataque")
+
+[node name="Golpe" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+texture = ExtResource("3_golpe")
+hframes = 4

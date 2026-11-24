@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/creditos.gd" id="1_scr"]
+[ext_resource type="Texture2D" path="res://arte/ui/menu_fundo.png" id="2_fundo"]
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_scr")
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fundo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Sombra" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Conteudo" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caixa" type="VBoxContainer" parent="Conteudo"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Texto" type="Label" parent="Conteudo/Caixa"]
+layout_mode = 2
+text = "THE LAST GUARDIAN CROWN
+
+Feito por: Afonso Victor e Paulo Barone
+Disciplina: Introdução ao Desenvolvimento de Jogos
+Professora: Camila Laranjeira da Silva
+Engine: Godot 4
+
+Pixel art, músicas e sons feitos para este projeto.
+Inspirado em Super Mario e Undertale."
+horizontal_alignment = 1
+
+[node name="Voltar" type="Button" parent="Conteudo/Caixa"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Voltar"
